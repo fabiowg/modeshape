@@ -1219,6 +1219,7 @@ public class BasicSqlQueryParser implements QueryParser {
             // We actually read the selector name, so now read the property name ...
             selectorName = new SelectorName(firstWord);
             String propertyName = parseName(tokens, typeSystem);
+            tokens.consume(")");
             return referenceValue(selectorName, propertyName);
         }
         tokens.consume(")");
